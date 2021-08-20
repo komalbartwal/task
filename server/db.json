@@ -1,0 +1,22 @@
+{
+  "submit": [
+    {
+      "name": "komal",
+      "email": "kbartwal_1999@yahoo.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "abcd",
+      "email": "abcd@gmail.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "amar",
+      "email": "a@gmail.com",
+      "password": "55555",
+      "id": 6
+    }
+  ]
+}

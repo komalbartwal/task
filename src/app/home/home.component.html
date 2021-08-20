@@ -1,0 +1,19 @@
+<form  #myForm="ngForm">
+    <h1>ToDoList</h1>
+    <label>Title</label><br>
+    <input type="text" name="title" placeholder="Title" [(ngModel)]="todoObj.title" ><br>
+    <label>Description</label><br>
+    <input type="text" name="desc" [(ngModel)]="todoObj.desc"><br>
+    <button class="btn btn-success" (click)="submit(myForm.value)" >Submit</button>
+    <button class="btn btn-success" (click)="ok()">Update</button>
+</form>
+<table class="table">
+    <th>Title</th>
+    <th>Description</th>
+    <tr *ngFor="let t of title">
+        <td>{{t.title}}</td>
+        <td>{{t.desc}}</td>
+        <td><button class="btn btn-danger" (click)="delet(t)"style="color: #000;"> Remove</button></td>
+        <td><button type="button" class="btn btn-warning" (click)="edit(t)">Edit</button></td>
+    </tr>
+</table>

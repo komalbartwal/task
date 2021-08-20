@@ -1,0 +1,32 @@
+<form #myForm="ngForm" class="form-group col-4" style="padding-top: 5%;padding-left: 5%;">
+    <h1>{{title}}</h1>
+    <label style="padding-left: 5%;">Name</label><br>
+    <input style="width:250px;height: 30px; padding-bottom: 2%; border-color:blue;border-radius: 4px;" 
+    type="text" class="form" name="name" placeholder="Enter your name" [(ngModel)]="userObj.name"><br>
+    <label style="padding-left: 5%;">Email</label><br>
+    <input style="width:250px;height: 30px; padding-bottom: 2%; border-color:blue;border-radius: 4px;" 
+     type="email" name="email" placeholder="Email" [(ngModel)]="userObj.email"><br>
+    <label style="padding-left: 5%;">Password</label><br>
+    <input style="width:250px;height: 30px; padding-bottom: 2%; border-color:blue;border-radius: 4px;"
+    type="password" name="password" [(ngModel)]="userObj.password"><br><br>
+    <button class="btn btn-primary" (click)="submit(myForm.value)">Submit</button>
+    <button class="btn btn-success" (click)="update()">Update</button>
+</form>
+<br>
+<app-profile [data]="info" (event)="data_fetched($event)"></app-profile>
+<table class="table">
+    <tbody>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Action</th>
+        <th>Edit</th>
+        <tr *ngFor = "let allusers of users">
+            <td>{{allusers.name}}</td>
+            <td>{{allusers.email}}</td>
+            <td>{{allusers.password}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="delet(allusers)">Remove</button></td>
+            <td><button type="button" class="btn btn-warning" (click)="edit(allusers)">Edit</button></td>
+        </tr>
+    </tbody>
+</table>
